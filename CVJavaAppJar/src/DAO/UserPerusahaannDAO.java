@@ -6,7 +6,7 @@
 package DAO;
 
 import java.util.List;
-import model.Bahasa;
+
 import model.UserPerusahaan;
 
 /**
@@ -16,4 +16,5 @@ import model.UserPerusahaan;
 public interface UserPerusahaannDAO extends GeneralDAO{
     public UserPerusahaan getById(long id);
     public List<UserPerusahaan> getAll();
+    public UserPerusahaan getLogin(String userName,String password);
 }
