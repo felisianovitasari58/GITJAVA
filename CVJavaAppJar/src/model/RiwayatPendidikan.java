@@ -7,10 +7,13 @@ package model;
 
 import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Basic;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 
 /**
@@ -24,15 +27,26 @@ public class RiwayatPendidikan implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @ManyToOne(optional = false)
     private Karyawan karyawan;
+    @Basic(optional = false)
+    @Column(nullable = false,length=40)
     private String namaInstitusi;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date thnMasuk;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date thnLulus;
+    @Basic(optional = false)
+    @Column(nullable = false)
     private double nilaiIpk;
+    @Basic(optional = false)
+    @Column(nullable = false,length=50)
     private String jurusan;
+    @Basic(optional = false)
+    @Column(nullable = false,length=100)
     private String ijazahPath;
+    @Basic(optional = false)
+    @Column(nullable = false,length=100)
     private String transkripPath;
     
 

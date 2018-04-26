@@ -7,6 +7,8 @@ package model;
 
 import java.io.Serializable;
 import java.util.List;
+import javax.persistence.Basic;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -27,7 +29,11 @@ public class Negara implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Basic(optional = false)
+    @Column(nullable = false,length=4)
     private String kodeNegara;
+    @Basic(optional = false)
+    @Column(nullable = false,length=15)
     private String negara;
 
     public Long getId() {

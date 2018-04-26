@@ -127,5 +127,20 @@ public class UserKaryawanDAOImplTest {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
+    /**
+     * UseCase (kode berapa) login sukses
+     */
+    @Test
+    public void testGetLoginSukses() {
+        System.out.println("getLogin");
+        String userName = "adminn";
+        String password = "adminadmin";
+        UserKaryawanDAOImpl instance = new UserKaryawanDAOImpl();
+//        UserKaryawan expResult = null;
+        UserKaryawan result = instance.getLogin(userName, password);
+        assertNotNull(result); 
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
     
 }

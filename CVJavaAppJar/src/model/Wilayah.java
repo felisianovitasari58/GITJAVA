@@ -7,6 +7,8 @@ package model;
 
 import java.io.Serializable;
 import java.util.List;
+import javax.persistence.Basic;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -31,9 +33,13 @@ public class Wilayah implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @Basic(optional = false)
+    @Column(nullable = false,length=30)
     private String namaWilayah;
+    @Basic(optional = false)
+    @Column(nullable = false)
     private LevelWilayah levelWilayah;
-    @ManyToOne
+    @ManyToOne(optional = false)
     private Wilayah parent;
 
     public Long getId() {

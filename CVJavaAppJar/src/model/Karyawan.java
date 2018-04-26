@@ -8,7 +8,9 @@ package model;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+import javax.persistence.Basic;
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -60,27 +62,55 @@ public class Karyawan extends Additional implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @ManyToOne
+    @ManyToOne (optional = false)
     private Agama agama;
-    @ManyToOne
+    @ManyToOne 
     private LevelPosisi levelPosisi;
+    @Basic(optional = false)
+    @Column(nullable = false,length=50)
     private String nikKitasPassport;
+    @Basic(optional = false)
+    @Column(nullable = false,length=30)
     private String npwp;
+    @Basic(optional = false)
+    @Column(nullable = false,length=50)
     private String namaLengkap;
+    @Basic(optional = false)
+    @Column(nullable = false,length=1)
     private JenisKelamin jenisKelamin;
+    @Basic(optional = false)
+    @Column(nullable = false,length=30)
     private String tempatLahir;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date tglLahir;
+    @Basic(optional = false)
+    @Column(nullable = false,length=14)
     private String noTelp1;
+    @Basic(optional = false)
+    @Column(nullable = false,length=14)
     private String noTelp2;
+    @Basic(optional = false)
+    @Column(nullable = false,length=14)
     private String noHp;
+    @Basic(optional = false)
+    @Column(nullable = false,length=40)
     private String email;
+    @Basic(optional = false)
+    @Column(nullable = false,length=40)
     private String posisi;
+    @Basic(optional = false)
+    @Column(nullable = false,length=100)
     private String ktpPath;
+    @Basic(optional = false)
+    @Column(nullable = false,length=100)
     private String kkPath;
+    @Basic(optional = false)
+    @Column(nullable = false,length=100)
     private String pasFotoPath;
-    @ManyToOne
+    @ManyToOne (optional = false)
     private Negara negara;
+    @OneToMany(mappedBy = "karyawan")
+    private List<RiwayatPendidikan> riwayatPendidikans;
 
     public Karyawan() {
         super();

@@ -6,6 +6,8 @@
 package model;
 
 import java.io.Serializable;
+import javax.persistence.Basic;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -27,7 +29,11 @@ public class UserKaryawan implements Serializable {
     private Long id;
     @OneToOne
     Karyawan karyawan;
+    @Basic(optional = true)
+    @Column(nullable = true,unique = true,length=50)
     private String usernameK;
+    @Basic(optional = true)
+    @Column(nullable = true,length=20)
     private String passwordK;
 
     public Long getId() {

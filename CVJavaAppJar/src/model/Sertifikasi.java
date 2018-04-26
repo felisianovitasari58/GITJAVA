@@ -12,30 +12,24 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 
 /**
  *
  * @author Dell Inspiron
  */
 @Entity
-public class DataKontakDarurat implements Serializable {
+public class Sertifikasi implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @ManyToOne(optional = false)
-    private Karyawan karyawan;
+    @Basic(optional = false)
+    @Column(nullable = false,length=10)
+    String kodeSertifikasi;
     @Basic(optional = false)
     @Column(nullable = false,length=50)
-    private String namaKontakDarurat;
-    @Basic(optional = false)
-    @Column(nullable = false,length=50)
-    private String hubungan;
-    @Basic(optional = false)
-    @Column(nullable = false,length=14)
-    private String noTelp;
+    String namaSertifikasi;
 
     public Long getId() {
         return id;
@@ -55,10 +49,10 @@ public class DataKontakDarurat implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof DataKontakDarurat)) {
+        if (!(object instanceof Sertifikasi)) {
             return false;
         }
-        DataKontakDarurat other = (DataKontakDarurat) object;
+        Sertifikasi other = (Sertifikasi) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -67,39 +61,7 @@ public class DataKontakDarurat implements Serializable {
 
     @Override
     public String toString() {
-        return "model.DataKontakDarurat[ id=" + id + " ]";
-    }
-
-    public Karyawan getKaryawan() {
-        return karyawan;
-    }
-
-    public void setKaryawan(Karyawan karyawan) {
-        this.karyawan = karyawan;
-    }
-
-    public String getNamaKontakDarurat() {
-        return namaKontakDarurat;
-    }
-
-    public void setNamaKontakDarurat(String namaKontakDarurat) {
-        this.namaKontakDarurat = namaKontakDarurat;
-    }
-
-    public String getHubungan() {
-        return hubungan;
-    }
-
-    public void setHubungan(String hubungan) {
-        this.hubungan = hubungan;
-    }
-
-    public String getNoTelp() {
-        return noTelp;
-    }
-
-    public void setNoTelp(String noTelp) {
-        this.noTelp = noTelp;
+        return "model.Sertifikasi[ id=" + id + " ]";
     }
     
 }
