@@ -7,6 +7,8 @@ package model;
 
 import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Basic;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,11 +27,18 @@ public class SertifikasiTraining implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @ManyToOne
+    @ManyToOne(optional = false)
     private Karyawan karyawan;
+    @Basic(optional = false)
+    @Column(nullable = false,length=50)
     private String kegiatan;
+    @Basic(optional = false)
+    @Column(nullable = false,length=30)
+    private String nomorSertifikat;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date tglKegiatan;
+    @Basic(optional = false)
+    @Column(nullable = false,length=100)
     private String sertifikatPath;
 
     public Long getId() {

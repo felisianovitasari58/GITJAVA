@@ -24,6 +24,7 @@
     <class>model.UserKaryawan</class>
     <class>model.UserPerusahaan</class>
     <class>model.Wilayah</class>
+    <class>model.Sertifikasi</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/cvnet?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

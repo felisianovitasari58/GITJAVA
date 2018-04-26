@@ -6,6 +6,8 @@
 package model;
 
 import java.io.Serializable;
+import javax.persistence.Basic;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,6 +24,8 @@ public class Level implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Basic(optional = false)
+    @Column(nullable = false,length=20)
     private String levelSkill;
 
     public Long getId() {

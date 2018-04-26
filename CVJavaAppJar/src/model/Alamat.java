@@ -6,6 +6,7 @@
 package model;
 
 import java.io.Serializable;
+import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,10 +25,12 @@ public class Alamat implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @ManyToOne
+    @ManyToOne(optional = false)
     private Karyawan karyawan;
-    @ManyToOne
+    @ManyToOne(optional = false)
     private Wilayah wilayah;
+    @Basic(optional = false)
+    @Column(nullable = false,length=30)
     private String jalan;
 
     public Long getId() {

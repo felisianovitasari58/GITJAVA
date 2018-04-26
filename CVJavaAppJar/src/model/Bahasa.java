@@ -7,7 +7,9 @@ package model;
 
 import java.io.Serializable;
 import java.util.List;
+import javax.persistence.Basic;
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -30,7 +32,7 @@ public class Bahasa implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String kodeBahasa;
-    private String Bahasa;
+    private String bahasa;
 
     public Long getId() {
         return id;
@@ -74,11 +76,11 @@ public class Bahasa implements Serializable {
     }
 
     public String getBahasa() {
-        return Bahasa;
+        return bahasa;
     }
 
     public void setBahasa(String Bahasa) {
-        this.Bahasa = Bahasa;
+        this.bahasa = Bahasa;
     }
     
 }
