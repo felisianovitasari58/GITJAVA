@@ -7,6 +7,8 @@ package model;
 
 import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Basic;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,15 +27,26 @@ public class RiwayatPekerjaan implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private Karyawan karyawan;
+    @Basic (optional = false)
+    @Column (nullable = false,length = 100)
     private String namaPerusahaan;
+    @Basic (optional = false)
+    @Column (nullable = false,length = 50)
     private String posisi;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date tglMasuk;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date tglKeluar;
+    @Basic (optional = false)
+    @Column (nullable = false,length = 200)
     private String alasanPindah;
+    @Basic (optional = false)
     private boolean statusCurrent;
+    @Basic (optional = false)
+    @Column (nullable = false,length = 30)
     private String namaRef;
+    @Basic (optional = false)
+    @Column (nullable = false,length = 15)
     private String notelpRef;
     private String emailRef;
     private String jabatanRef;

@@ -7,6 +7,8 @@ package model;
 
 import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Basic;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,14 +27,20 @@ public class InfoTambahan implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @OneToOne
+    @OneToOne (optional = false)
     private Karyawan karyawan;
+    @Basic (optional = false)
+    @Column (nullable = false)
     private boolean kesediaanLuarKota;
+    @Basic (optional = false)
+    @Column (nullable = false)
     private boolean kesediaanFinance;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date expJoinDate;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date employeeNotice;
+    @Basic (optional = false)
+    @Column (nullable = false)
     private double expSalary;
 
     public Karyawan getKaryawan() {

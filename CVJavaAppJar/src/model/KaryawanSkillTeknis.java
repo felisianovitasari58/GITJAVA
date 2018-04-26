@@ -6,6 +6,8 @@
 package model;
 
 import java.io.Serializable;
+import javax.persistence.Basic;
+import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -32,6 +34,8 @@ public class KaryawanSkillTeknis implements Serializable {
     @JoinColumn(name = "idSkillTeknis",referencedColumnName = "id")
     @ManyToOne (optional = false)
     private SkillTeknis skillTeknis;
+    @Basic (optional = false)
+    @Column (nullable = false,length = 40)
     private String levelSkill;
     
     public KaryawanSkillTeknis(){}

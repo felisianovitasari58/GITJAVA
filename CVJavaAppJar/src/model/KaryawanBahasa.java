@@ -6,6 +6,8 @@
 package model;
 
 import java.io.Serializable;
+import javax.persistence.Basic;
+import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -31,9 +33,17 @@ public class KaryawanBahasa implements Serializable {
     @JoinColumn (name = "idBahasa",referencedColumnName = "id")
     @ManyToOne (optional = false)
     private Bahasa bahasa;
+    @Basic (optional = false)
+    @Column (nullable = false,length = 40)
     private String levelSkillReading;
+    @Basic (optional = false)
+    @Column (nullable = false,length = 40)
     private String levelSkillWriting;
+    @Basic (optional = false)
+    @Column (nullable = false,length = 40)
     private String levelSkillListening;
+    @Basic (optional = false)
+    @Column (nullable = false,length = 40)
     private String levelSkillSpeaking;
 
     public KaryawanBahasa(){}
