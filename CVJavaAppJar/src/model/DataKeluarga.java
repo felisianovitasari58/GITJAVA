@@ -7,6 +7,8 @@ package model;
 
 import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Basic;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,14 +27,24 @@ public class DataKeluarga implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @ManyToOne
+    @ManyToOne (optional = false)
     private Karyawan karyawan;
+    @Basic (optional = false)
+    @Column (nullable = false,length = 50)
     private String hubungan;
+    @Basic (optional = false)
+    @Column (nullable = false,length = 100)
     private String namaLengkap;
+    @Basic (optional = false)
+    @Column (nullable = false,length = 50)
     private String tempatLahir;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date tglLahir;
+    @Basic (optional = false)
+    @Column (nullable = false,length = 100)
     private String pendididkanTerakhir;
+    @Basic (optional = false)
+    @Column (nullable = false,length = 100)
     private String pekerjaan;
 
     public Long getId() {

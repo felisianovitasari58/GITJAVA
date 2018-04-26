@@ -48,8 +48,14 @@ public class RiwayatPekerjaan implements Serializable {
     @Basic (optional = false)
     @Column (nullable = false,length = 15)
     private String notelpRef;
+    @Basic (optional = false)
+    @Column (nullable = false,length = 30)
     private String emailRef;
+    @Basic (optional = false)
+    @Column (nullable = false,length = 30)
     private String jabatanRef;
+    @Basic (optional = false)
+    @Column (nullable = false,length = 100)
     private String referenceLetterPath;
 
     public Long getId() {
