@@ -28,5 +28,15 @@ public class UserPerusahaanDAOImpl extends GeneralDAOImpl implements UserPerusah
     public List<UserPerusahaan> getAll() {
         return em.createQuery("from UserPerusahaan up").getResultList();
     }
+
+    @Override
+   public UserPerusahaan getLogin(String userName, String password) {
+        UserPerusahaan tes=null;
+        try {
+            tes=(UserPerusahaan)em.createQuery("select up from UserPerusahaan up where up.usernameP=?1 and up.passwordP=?2").setParameter(1,userName).setParameter(2, password).getSingleResult();
+        } catch (Exception e) {
+        }
+        return tes;
+    }
     
 }
