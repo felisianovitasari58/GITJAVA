@@ -57,12 +57,8 @@ public class Main {
 //        if(userHelper.encrypt(uk.getUsernameK()+pass).equals(uk.getPasswordK()))
 //            System.out.println("benar");
         //coba
-<<<<<<< HEAD
         //ajHAJhakJHKJ
         //AHjaAJH
-||||||| merged common ancestors
-=======
         //zakiloveeneng
->>>>>>> a553ff5ed91611604257d0a45a62902d21153d90
     }
 }
