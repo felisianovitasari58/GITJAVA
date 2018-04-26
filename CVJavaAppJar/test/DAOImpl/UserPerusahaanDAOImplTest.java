@@ -102,4 +102,16 @@ public class UserPerusahaanDAOImplTest {
         }
         assertSame(expResult, u);
     }
+     @Test
+    public void testGetLogin() {
+        System.out.println("getLogin");
+        String userName = "adminn";
+        String password = "adminadmin";
+        UserPerusahaanDAOImpl instance = new UserPerusahaanDAOImpl();
+//        UserPerusahaan expResult = null;
+        UserPerusahaan result = instance.getLogin(userName, password);
+        assertNull(result); 
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
 }
